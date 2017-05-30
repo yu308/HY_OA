@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/bg.jpg</file>
+        <file>img/header_lg.png</file>
+    </qresource>
+    <qresource prefix="/font">
+        <file>fontawesome-webfont.ttf</file>
+    </qresource>
+</RCC>
