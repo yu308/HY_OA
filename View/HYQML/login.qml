@@ -1,7 +1,8 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.0
-import QtQuick.Controls.Material 2.1
+import QtQuick.Controls.Material  2.1
+
 
 ApplicationWindow {
     visible: true
@@ -13,17 +14,19 @@ ApplicationWindow {
     minimumWidth: 480
     title: qsTr("恒印图文管理平台")
 
+    Material.theme: Material.Light
+
     FontLoader{
         id:webaws
         source: "./fontawesome-webfont.ttf"
     }
 
-   /* Image {
+    Image {
         id: img_bg
         width: 480
         height: 300
         source: "img/bg.jpg"
-    }*/
+    }
 
     Text {
         id:img_header_user
@@ -49,10 +52,12 @@ ApplicationWindow {
         TextField {
             id: input_user
             x: 184
-            y: 85
+            y: 80
             width: 200
-            height: 30
+            height: 40
             placeholderText: qsTr("请输入用户名")
+            font.pixelSize: 12
+
 
         }
 
@@ -71,21 +76,22 @@ ApplicationWindow {
             y: 135
             width: 80
             height: 30
-            text: qsTr(" 密  码：")
-            verticalAlignment: Text.AlignVCenter
-            font.pixelSize: 14
             horizontalAlignment: Text.AlignRight
-
+            verticalAlignment: Text.AlignVCenter
+            text: qsTr(" 密  码：")
+            font.pixelSize: 12
         }
 
         TextField {
             id: input_pwd
             x: 184
-            y: 135
+            y: 130
             width: 200
-            height: 30
+            height: 40
             echoMode: TextInput.Password
             placeholderText: qsTr("请输入密码")
+            font.pixelSize: 12
+
         }
 
         Button {
@@ -95,6 +101,8 @@ ApplicationWindow {
             width: 116
             height: 36
             text: qsTr("登 录")
+            highlighted: true
+            Material.background: Material.LightBlue
         }
 
         Button {
@@ -104,5 +112,7 @@ ApplicationWindow {
             width: 110
             height: 36
             text: qsTr("取 消")
+            highlighted: true
+            Material.background: Material.LightBlue
         }
 }

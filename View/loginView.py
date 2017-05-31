@@ -8,9 +8,8 @@ from PyQt5.QtGui import QGuiApplication
 
 if __name__ =='__main__':
     sys_argv = sys.argv
-    #sys_argv += ['--style', 'Universal']
-    #sys_argv += ['--theme', 'dark']
-    qml_file="HYQML/login.qml"
+    sys_argv += ['--style', 'Material']
+    qml_file="HYQML/main.qml"
     app=QtWidgets.QApplication(sys_argv)
     engine=QQmlApplicationEngine(QUrl(qml_file))
     login=engine.rootObjects()[0]
