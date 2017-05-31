@@ -1,18 +1,37 @@
 import QtQuick 2.7
-import QtQuick.Controls 2.0
+import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.0
+import QtQuick.Controls.Material 2.1
 
 ApplicationWindow {
     visible: true
     width: 480
     height: 300
+    maximumHeight: 300
+    maximumWidth: 480
+    minimumHeight: 300
+    minimumWidth: 480
     title: qsTr("恒印图文管理平台")
 
-    Image {
+    FontLoader{
+        id:webaws
+        source: "./fontawesome-webfont.ttf"
+    }
+
+   /* Image {
         id: img_bg
         width: 480
         height: 300
-        source: "img/img/bg.jpg"
+        source: "img/bg.jpg"
+    }*/
+
+    Text {
+        id:img_header_user
+        text: "\uf2bd"
+        font.family: webaws.name
+        x:96
+        y:92
+        font.pixelSize: 16
     }
 
     Text {
@@ -34,6 +53,16 @@ ApplicationWindow {
             width: 200
             height: 30
             placeholderText: qsTr("请输入用户名")
+
+        }
+
+        Text{
+            id:img_header_pwd
+            text:"\uf084"
+            font.family: webaws.name
+            font.pixelSize: 16
+            x:96
+            y:142
         }
 
         Text {
@@ -42,10 +71,11 @@ ApplicationWindow {
             y: 135
             width: 80
             height: 30
-            text: qsTr("密  码：")
+            text: qsTr(" 密  码：")
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: 14
             horizontalAlignment: Text.AlignRight
+
         }
 
         TextField {
