@@ -5,36 +5,49 @@ import QtQuick.Controls.Material  2.1
 import QtQuick.Window 2.0
 
 ApplicationWindow{
+    id:root
     visible: true
-    width: Screen.desktopAvailableWidth
-    height: Screen.desktopAvailableHeight
-    //maximumHeight: Screen.desktopAvailableHeight
-    //maximumWidth: Screen.desktopAvailableWidth
-    //minimumHeight: 300
-    //minimumWidth: 480
+    //width: Screen.desktopAvailableWidth
+    //height: Screen.desktopAvailableHeight
+    width: 640
+    height: 480
     title: qsTr("恒印图文管理平台")
     Material.theme: Material.Light
 
-    ToolBar {
-        id: toolBar
-        x: 0
-        y: 0
-        width: 640
-        height: 40
 
-        ToolButton {
-            id: toolButton
-            x: 0
-            y: 0
-            text: qsTr("Tool Button")
+   UToolBar{
+       id:menu
+       anchors.top: parent.top
+   }
+
+
+   Rectangle{
+        id:navbar
+        width: 96
+        height: root.height-menu.height
+        anchors.top: menu.bottom
+        color:Material.color(Material.LightBlue)
+
+        Column{
+            spacing: 5
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+
+            Button{
+                id:test
+                width: 64
+                height: 48
+                //anchors.horizontalCenter:  navbar
+                //anchors.topMargin: 1
+            }
+            Button{
+                id:test2
+                width: 64
+                height: 48
+                //anchors.horizontalCenter:  navbar
+                //anchors.topMargin: 1
+            }
         }
 
-        ToolButton {
-            id: toolButton1
-            x: 79
-            y: 0
-            text: qsTr("Tool Button")
-        }
     }
-
 }
